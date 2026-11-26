@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <section class="cover" id="cover">
+        <div class="cover-card">
+            <p class="small-title">YOU ARE INVITED TO</p>
+            <div class="flower">✿</div>
+
+            <h1>Jaehyun's Birthday<br>Celebration</h1>
+
+            
+
+            <p class="cover-caption">A special day, a special moment</p>
+
+            <p class="guest-label">Kepada Yth.</p>
+            <h3 id="namaTamuCover">Tamu Undangan</h3>
+
+            <button class="open-button" onclick="bukaUndangan()">
+                Buka Undangan
+            </button>
+        </div>
+    </section>
+
+   
+    <main id="isiUndangan" class="hidden">
+
+        <section class="hero section">
+            <p class="eyebrow">THE DAY IS COMING</p>
+            <h1>You're Invited!</h1>
+            <p class="hero-text">
+                Dengan penuh kebahagiaan, aku mengundangmu
+                untuk hadir di hari spesialku.
+            </p>
+            <div class="hero-flower"></div>
+            <h2>Birthday Party</h2>
+            <p class="guest-welcome">
+                Dear, <span id="namaTamuIsi">Tamu Undangan</span>
+            </p>
+        </section>
+
+        <section class="section profile">
+            <p class="eyebrow">A SPECIAL CELEBRATION</p>
+            <img src="download (4).jpg" class="main-photo" alt="Foto ulang tahun">
+            <h2>It's My Birthday!</h2>
+            <p>
+                Hari spesial ini akan terasa lebih berkesan
+                dengan kehadiran orang-orang tersayang.
+                Mari rayakan bersama dan ciptakan kenangan indah.
+            </p>
+        </section>
+
+        <section class="section countdown-section">
+            <p class="eyebrow">SAVE THE DATE</p>
+            <h2>Counting Down</h2>
+            <div class="countdown">
+                <div><strong id="days">00</strong><span>Hari</span></div>
+                <div><strong id="hours">00</strong><span>Jam</span></div>
+                <div><strong id="minutes">00</strong><span>Menit</span></div>
+                <div><strong id="seconds">00</strong><span>Detik</span></div>
+            </div>
+        </section>
+
+        <section class="section event">
+            <p class="eyebrow">THE CELEBRATION</p>
+            <h2>Detail Acara</h2>
+
+            <div class="event-card">
+                <div class="event-icon">♡</div>
+                <h3>Birthday Party</h3>
+                <p>14 Februari 2027</p>
+                <p>Pukul 15.00 WIB - selesai</p>
+                <div class="line"></div>
+                <h3>Lokasi Acara</h3>
+                <p>Taman Hiburan</p>
+                <p>Disneyland Paris</p>
+                <a href="https://maps.app.goo.gl/AU6RYGJrp4zqWLD19" target="_blank" class="map-button">
+                    Lihat Lokasi
+                </a>
+            </div>
+        </section>
+
+        <section class="section gallery">
+            <p class="eyebrow"></p>
+            <h2>Memory Gallery</h2>
+            <div class="gallery-grid">
+                <img src="download (4).jpg" alt="Galeri 1">
+                <img src="JAEHYUN.jpg" alt="Galeri 2">
+                <img src="Jeong Jaehyun.jpg" alt="Galeri 3">
+                <img src="wallpaper jaehyun nct127.jpg" alt="Galeri 4">
+                <img src="Jaehyun (1).jpg" alt="Galeri 5">
+                <img src="jaehyun (3).jpg" alt="Galeri 6">
+            </div>
+        </section>
+        
+       
+    
+
+        <section class="section rsvp">
+            <p class="eyebrow">KINDLY RESPOND</p>
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Berikan konfirmasi kehadiranmu melalui formulir berikut.</p>
+
+            <form id="formRSVP">
+
+    <input
+        type="text"
+        id="namaRSVP"
+        name="nama"
+        placeholder="Nama kamu"
+        readonly
+    >
+
+    <select id="kehadiran" name="kehadiran" required>
+        <option value="">Pilih kehadiran</option>
+        <option value="Hadir">Hadir</option>
+        <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
+
+    <textarea
+        id="pesanRSVP"
+        name="pesan"
+        placeholder="Tulis ucapan atau pesan..."
+    ></textarea>
+
+    <button type="submit" class="btn-rsvp">
+        Kirim RSVP
+    </button>
+
+    <p id="statusRSVP"></p>
+
+</form>
+
+            <p id="pesanRSVP"></p>
+        </section>
+
+        <section class="section closing">
+            <div class="flower"></div>
+            <h2>Thank You!</h2>
+            <p>
+                Terima kasih atas perhatian dan doa yang diberikan.
+                Sampai bertemu di hari spesialku!
+            </p>
+            <p class="closing-name">With love ♡</p>
+        </section>
+        
+
+        
+
+        <footer>
+            <p>Made with ♡ for my special day</p>
+        </footer>
+
+    </main>
+
+        </main>
+
+    <!-- LIGHTBOX FOTO -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Foto diperbesar">
+    </div>
+
+   <!-- TOMBOL MUSIK -->
+<button id="tombolMusik" class="music-toggle" aria-label="Putar musik">
+    ♫
+</button>
+
+<audio id="musik" loop>
+    <source src="marbel3dmusic_mp3.mp3" type="audio/mpeg">
+</audio>
+
+    <script src="script.js"></script>
+    <script src="lightbox.js"></script>
+
+
+    <audio id="musik" loop>
+        <source src="marbel3dmusic_mp3.mp3" type="audio/mpeg">
+    </audio>
+<script src="script.js"></script>
+<script src="lightbox.js"></script>
+<script src="musik.js"></script>
+
+</body>
+</html>
