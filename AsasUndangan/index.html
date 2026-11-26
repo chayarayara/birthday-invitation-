@@ -121,7 +121,7 @@
         readonly
     >
 
-    <select id="kehadiran" name="kehadiran">
+    <select id="kehadiran" name="kehadiran" required>
         <option value="">Pilih kehadiran</option>
         <option value="Hadir">Hadir</option>
         <option value="Tidak Hadir">Tidak Hadir</option>
@@ -133,12 +133,11 @@
         placeholder="Tulis ucapan atau pesan..."
     ></textarea>
 
-   <button type="submit" class="btn-rsvp">
-    Kirim RSVP
-</button>
+    <button type="submit" class="btn-rsvp">
+        Kirim RSVP
+    </button>
 
-
-<p id="statusRSVP"></p>
+    <p id="statusRSVP"></p>
 
 </form>
 
@@ -172,9 +171,14 @@
         <img id="lightbox-img" src="" alt="Foto diperbesar">
     </div>
 
-    <audio id="musik" loop>
-        <source src="marbel3dmusic_mp3.mp3" type="audio/mpeg">
-    </audio>
+   <!-- TOMBOL MUSIK -->
+<button id="tombolMusik" class="music-toggle" aria-label="Putar musik">
+    ♫
+</button>
+
+<audio id="musik" loop>
+    <source src="marbel3dmusic_mp3.mp3" type="audio/mpeg">
+</audio>
 
     <script src="script.js"></script>
     <script src="lightbox.js"></script>
@@ -183,9 +187,9 @@
     <audio id="musik" loop>
         <source src="marbel3dmusic_mp3.mp3" type="audio/mpeg">
     </audio>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 <script src="lightbox.js"></script>
+<script src="musik.js"></script>
 
 </body>
 </html>

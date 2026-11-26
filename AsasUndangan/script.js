@@ -68,30 +68,56 @@ const countdownTimer = setInterval(function () {
 
 
 
-  document.getElementById("formRSVP").addEventListener("submit", async function(e) {
-    e.preventDefault();
+  d
+const formRSVP = document.getElementById("formRSVP");
 
-    const status = document.getElementById("statusRSVP");
-    const data = new FormData(this);
+if (formRSVP) {
+    formRSVP.addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-    if (!kodeTamu) {
-        status.textContent = "Link undangan tidak memiliki kode tamu.";
-        return;
-    }
+        const status = document.getElementById("statusRSVP");
+        const data = new FormData(this);
 
-    try {
-        const response = await fetch("proses/simpan_rsvp.php", {
-            method: "POST",
-            body: data
-        });
+        const parameter = new URLSearchParams(window.location.search);
+        const kodeTamu = parameter.get("kode");
 
-        const hasil = await response.json();
-        status.textContent = hasil.pesan;
+        if (!kodeTamu) {
+            status.textContent = "Kode tamu tidak ditemukan!";
+            return;
+        }
 
-    } catch (error) {
-        status.textContent = "Gagal mengirim RSVP. Periksa koneksi server.";
-    }
-});
+        data.append("kode", kodeTamu);
+
+        status.textContent = "Sedang mengirim RSVP...";
+
+        try {
+            const response = await fetch("proses/simpan_rsvp.php", {
+                method: "POST",
+                body: data
+            });
+
+            const hasil = await response.json();
+
+            if (response.ok && hasil.status === "success") {
+                status.textContent =
+                    "✓ RSVP berhasil disimpan dan terkirim! Terima kasih sudah mengisi konfirmasi.";
+
+                status.style.color = "#4d8056";
+
+            } else {
+                status.textContent = hasil.pesan || "RSVP gagal disimpan.";
+                status.style.color = "#b54747";
+            }
+
+        } catch (error) {
+            console.error(error);
+            status.textContent =
+                "Terjadi kesalahan. RSVP belum dapat dikirim.";
+            status.style.color = "#b54747";
+        }
+    });
+}
+
 function pindahHalaman(id) {
     const tujuan = document.getElementById(id);
 
