@@ -1,0 +1,828 @@
+
+/* ==============================
+   WARNA UTAMA
+================================ */
+:root {
+    --cream: #F8F1E7;
+    --cream-light: #FFFCF7;
+    --beige: #E8D8C3;
+    --brown-light: #C4A484;
+    --brown: #96745A;
+    --dark-brown: #594333;
+    --shadow: rgba(89, 67, 51, 0.13);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark-brown);
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==============================
+   HEADER & NAVIGATION
+================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(248, 241, 231, 0.96);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 12px var(--shadow);
+    z-index: 99999;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--dark-brown);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 5px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--brown);
+    border-bottom: 2px solid var(--brown);
+}
+
+/* ==============================
+   COVER
+================================ */
+.cover {
+    min-height: 100vh;
+    padding: 100px 25px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #F8F1E7,
+        #E8D8C3,
+        #F3E7D7
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-card {
+    width: 100%;
+    max-width: 430px;
+    min-height: 620px;
+    padding: 35px 25px;
+    background: rgba(255, 252, 247, 0.85);
+    border: 1px solid white;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px var(--shadow);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-title,
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--brown);
+}
+
+.flower {
+    color: var(--brown-light);
+    font-size: 35px;
+    margin: 15px;
+}
+
+.cover h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark-brown);
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.cover-photo {
+    width: 175px;
+    height: 215px;
+    object-fit: cover;
+    border-radius: 100px 100px 20px 20px;
+    border: 5px solid white;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.cover-caption {
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+.guest-label {
+    font-size: 12px;
+}
+
+#namaTamuCover {
+    color: var(--brown);
+    margin: 5px 0 20px;
+}
+
+/* ==============================
+   BUTTON
+================================ */
+.open-button,
+.submit-button,
+.map-button {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 30px;
+    background: linear-gradient(
+        135deg,
+        var(--brown-light),
+        var(--brown)
+    );
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.open-button:hover,
+.submit-button:hover,
+.map-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* ==============================
+   BAGIAN UMUM
+================================ */
+.section {
+    padding: 80px 22px;
+    text-align: center;
+    background: var(--cream);
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--dark-brown);
+    margin: 15px 0;
+}
+
+.section p {
+    line-height: 1.8;
+}
+
+.hero {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #EDE0CE;
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--dark-brown);
+    margin: 15px 0;
+}
+
+.hero-text {
+    max-width: 450px;
+}
+
+.hero-flower {
+    font-size: 55px;
+    color: var(--brown-light);
+    margin: 20px;
+}
+
+.hero h2 {
+    font-size: 30px;
+}
+
+.guest-welcome {
+    margin-top: 15px;
+}
+
+/* ==============================
+   FOTO
+================================ */
+.profile {
+    max-width: 750px;
+    margin: auto;
+}
+
+.main-photo {
+    width: 220px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 120px 120px 20px 20px;
+    margin: 25px 0;
+    border: 7px solid white;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+/* ==============================
+   COUNTDOWN
+================================ */
+.countdown-section {
+    background: #EDE0CE;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.countdown div {
+    background: var(--cream-light);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 75px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+.countdown strong {
+    display: block;
+    font-size: 27px;
+    color: var(--brown);
+}
+
+.countdown span {
+    font-size: 12px;
+}
+
+/* ==============================
+   DETAIL ACARA
+================================ */
+.event-card {
+    max-width: 450px;
+    margin: 30px auto 0;
+    background: var(--cream-light);
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.event-icon {
+    font-size: 35px;
+    color: var(--brown-light);
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    color: var(--dark-brown);
+    margin: 10px 0;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+    background: var(--brown-light);
+    margin: 20px auto;
+}
+
+.map-button {
+    margin-top: 20px;
+}
+
+/* ==============================
+   GALERI
+================================ */
+.gallery {
+    background: #F0E5D6;
+}
+
+.gallery-grid {
+    max-width: 850px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid white;
+}
+
+/* ==============================
+   RSVP
+================================ */
+.rsvp {
+    max-width: 650px;
+    margin: auto;
+}
+
+#formRSVP {
+    text-align: left;
+    background: var(--cream-light);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+#formRSVP label {
+    display: block;
+    font-size: 13px;
+    margin: 15px 0 7px;
+}
+
+#formRSVP input,
+#formRSVP select,
+#formRSVP textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--beige);
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    background: white;
+    color: var(--dark-brown);
+}
+
+#formRSVP input:focus,
+#formRSVP select:focus,
+#formRSVP textarea:focus {
+    border-color: var(--brown);
+}
+
+#formRSVP button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--brown);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#formRSVP button:hover {
+    background: var(--dark-brown);
+}
+
+#pesanRSVP {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* ==============================
+   PENUTUP
+================================ */
+.closing {
+    background: #EDE0CE;
+    padding: 90px 25px;
+    text-align: center;
+}
+
+.closing-name {
+    margin-top: 25px;
+    color: var(--brown);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--cream);
+    color: var(--dark-brown);
+    font-size: 12px;
+}
+
+/* ==============================
+   TOMBOL MUSIK
+================================ */
+.music-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--dark-brown);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+    header {
+        padding: 13px 10px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    .cover {
+        padding: 90px 15px 15px;
+    }
+
+    .cover-card {
+        min-height: 570px;
+        padding: 25px 18px;
+    }
+
+    .cover h1 {
+        font-size: 35px;
+    }
+
+    .section {
+        padding: 65px 18px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .gallery-grid {
+    max-width: 650px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 5px solid white;
+    box-shadow: 0 5px 18px rgba(89, 67, 51, 0.13);
+    transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 480px) {
+    .gallery-grid {
+        gap: 12px;
+    }
+
+    .gallery-grid img {
+        height: 170px;
+    }
+}
+
+    #formRSVP {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 360px) {
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+
+    #navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+
+#navbar nav,
+#navbar ul,
+#navbar li,
+#navbar a {
+    pointer-events: auto !important;
+}
+
+#navbar a {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #594333;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 999999;
+}
+
+#navbar a:hover {
+    color: #96745A;
+}
+
+
+.gallery-grid {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(89, 67, 51, 0.12);
+}
+
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        max-width: 360px;
+        gap: 12px;
+    }
+
+    .gallery-grid img {
+        height: 170px;
+    }
+}
+
+/* RESPONSIVE HP */
+
+@media (max-width: 600px) {
+    #formRSVP button[type="submit"] {
+        padding: 13px;
+        font-size: 14px;
+    }
+}
+/* TOMBOL KIRIM RSVP */
+
+#formRSVP button,
+#formRSVP button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 15px;
+
+    background-color: #96745A;
+    color: #FFFCF7;
+
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(89, 67, 51, 0.15);
+}
+
+#formRSVP button:hover {
+    background-color: #594333;
+    transform: translateY(-2px);
+}
+
+#formRSVP button:active {
+    transform: scale(0.98);
+}
+.btn-rsvp {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 15px;
+
+    background: #96745A !important;
+    color: #FFFCF7 !important;
+
+    border: none !important;
+    border-radius: 30px !important;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(89, 67, 51, 0.15);
+}
+
+.btn-rsvp:hover {
+    background: #594333 !important;
+    transform: translateY(-2px);
+}
+
+.btn-rsvp:active {
+    transform: scale(0.98);
+}
+#statusRSVP {
+    margin-top: 15px;
+    text-align: center;
+    color: #594333;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* NAVBAR */
+
+html {
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    background: #FFFCF7;
+}
+
+#navbar nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    padding: 18px 15px;
+    margin: 0;
+}
+
+#navbar nav ul li a {
+    display: inline-block;
+    color: #594333;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#navbar nav ul li a:hover {
+    color: #C4A484;
+}
+
+@media (max-width: 600px) {
+    #navbar nav ul {
+        gap: 18px;
+        padding: 15px 8px;
+    }
+
+    #navbar nav ul li a {
+        font-size: 12px;
+    }
+}
+
+/* LIGHTBOX */
+.gallery-grid img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(30, 23, 18, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .lightbox img {
+        max-width: 100%;
+        max-height: 80vh;
+    }
+
+    .close-lightbox {
+        top: 10px;
+        right: 20px;
+    }
+}
+
+/* LIGHTBOX FOTO */
+#lightbox {
+    display: none !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(30, 23, 18, 0.92) !important;
+    z-index: 99999 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 20px !important;
+}
+
+#lightbox.active {
+    display: flex !important;
+}
+
+#lightbox img {
+    display: block !important;
+    max-width: 90% !important;
+    max-height: 85vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+}
+
+#lightbox .close-lightbox {
+    position: absolute !important;
+    top: 15px !important;
+    right: 30px !important;
+    color: white !important;
+    font-size: 45px !important;
+    cursor: pointer !important;
+    z-index: 100000 !important;
+}
+
+.gallery-grid img {
+    cursor: pointer;
+}
+}
